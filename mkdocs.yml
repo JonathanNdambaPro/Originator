@@ -1,0 +1,54 @@
+site_name: Graph Coloring Evaluation
+repo_url: https://github.com/jojo/synthdata
+site_url: https://jojo.github.io/synthdata
+site_description: A synthesizer and evaluator for NP-Hard Graph Coloring problems using Pydantic-AI.
+site_author: Jonathan Ndamba
+edit_uri: edit/main/docs/
+repo_name: jojo/synthdata
+copyright: Maintained by <a href="https://jojo.com">jojo</a>.
+
+nav:
+  - Home: index.md
+  - Modules: modules.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["synthdata"]
+theme:
+  name: material
+  feature:
+    tabs: true
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jojo/synthdata
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/synthdata
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.snippets:
+      base_path: ["."]
