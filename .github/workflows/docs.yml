@@ -9,6 +9,7 @@ on:
       - "docs/**"
       - "mkdocs.yml"
       - ".github/workflows/docs.yml"
+      - ".github/actions/*"
 
 permissions:
   contents: write
@@ -26,6 +27,8 @@ jobs:
 
       - name: Check if documentation can be built
         run: uv run mkdocs build -s
+        env:
+          NO_MKDOCS_2_WARNING: 1
 
   deploy-docs:
     runs-on: ubuntu-latest
@@ -48,3 +51,5 @@ jobs:
 
       - name: Deploy documentation to GitHub Pages
         run: uv run mkdocs gh-deploy --force
+        env:
+          NO_MKDOCS_2_WARNING: 1

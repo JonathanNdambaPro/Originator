@@ -32,11 +32,11 @@ clean-build: ## Clean build artifacts
 
 .PHONY: docs-test
 docs-test: ## Test if documentation can be built without warnings or errors
-	@uv run mkdocs build -s
+	@NO_MKDOCS_2_WARNING=1 uv run mkdocs build -s
 
 .PHONY: docs
 docs: ## Build and serve the documentation
-	@uv run mkdocs serve
+	@NO_MKDOCS_2_WARNING=1 uv run mkdocs serve
 
 .PHONY: docker_synthdata
 docker_synthdata: ## Launch the Docker Fallback Playground
