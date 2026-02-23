@@ -41,7 +41,7 @@ support_agent = Agent(
 )
 
 
-async def main():
+async def main() -> None:
     """
     Main evaluation routine.
 
